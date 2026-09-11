@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1y8fn1ux1iad"
-path="res://.godot/imported/plt_normal_lv02.png-f2753546d72e312688734d3f69b2cfe8.ctex"
+uid="uid://dimgd0huylkeh"
+path="res://.godot/imported/Spikes.png-11d1a78e9d90cc63c4b17a8d33049e74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Boss/Normal_Platform/plt_normal_lv02.png"
-dest_files=["res://.godot/imported/plt_normal_lv02.png-f2753546d72e312688734d3f69b2cfe8.ctex"]
+source_file="res://Resources/Item/Spike/Spikes.png"
+dest_files=["res://.godot/imported/Spikes.png-11d1a78e9d90cc63c4b17a8d33049e74.ctex"]
 
 [params]
 

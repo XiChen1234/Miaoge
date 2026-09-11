@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l8q4y3j7utfh"
-path="res://.godot/imported/plt_normal_lv03.png-2a95bba253738078908a2ea659e80ee2.ctex"
+uid="uid://bxh8slmq88k5h"
+path="res://.godot/imported/plt_normal_lv05.png-d25e0ca94be32b8e0e0172aed15141d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Boss/Normal_Platform/plt_normal_lv03.png"
-dest_files=["res://.godot/imported/plt_normal_lv03.png-2a95bba253738078908a2ea659e80ee2.ctex"]
+source_file="res://Resources/Item/NormalPlatform/plt_normal_lv05.png"
+dest_files=["res://.godot/imported/plt_normal_lv05.png-d25e0ca94be32b8e0e0172aed15141d7.ctex"]
 
 [params]
 

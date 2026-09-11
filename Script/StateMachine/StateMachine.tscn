@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ckc6lom3dbat1"]
+
+[ext_resource type="Script" uid="uid://cfaoin0g8khlu" path="res://Script/StateMachine/state_machine.gd" id="1_3i1ng"]
+
+[node name="StateMachine" type="Node" unique_id=258909694]
+script = ExtResource("1_3i1ng")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=181175837]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1767149975]
+offset_right = 93.0
+offset_bottom = 23.0
+text = "   当前状态："

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6aslci4q46io"
-path="res://.godot/imported/lv04_m_spike.png-d23d0553727311938e9e39816e9b5f8b.ctex"
+uid="uid://dhko3m77mhwt4"
+path="res://.godot/imported/lv01-03_m_spike.png-b2ea3d4dd2449e130e5fb39243e9bbf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Item/Moving_Spike/lv04_m_spike.png"
-dest_files=["res://.godot/imported/lv04_m_spike.png-d23d0553727311938e9e39816e9b5f8b.ctex"]
+source_file="res://Resources/Item/MovingSpike/lv01-03_m_spike.png"
+dest_files=["res://.godot/imported/lv01-03_m_spike.png-b2ea3d4dd2449e130e5fb39243e9bbf5.ctex"]
 
 [params]
 

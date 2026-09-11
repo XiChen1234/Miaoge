@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxh8slmq88k5h"
-path="res://.godot/imported/plt_normal_lv05.png-56d38c166f96bd2bf0db071886ed705c.ctex"
+uid="uid://bbm7xkd8lhb1j"
+path="res://.godot/imported/Bricks.png-ee54bca66d1b5406580540d21377ce9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Boss/Normal_Platform/plt_normal_lv05.png"
-dest_files=["res://.godot/imported/plt_normal_lv05.png-56d38c166f96bd2bf0db071886ed705c.ctex"]
+source_file="res://Resources/Item/Brick/Bricks.png"
+dest_files=["res://.godot/imported/Bricks.png-ee54bca66d1b5406580540d21377ce9b.ctex"]
 
 [params]
 
