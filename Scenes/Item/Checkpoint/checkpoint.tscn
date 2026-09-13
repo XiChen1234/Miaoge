@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://nn05re6b45xy"]
+
+[ext_resource type="Texture2D" uid="uid://d2h66jryrqqbh" path="res://Resources/Item/Stele/stele .png" id="1_fo7p1"]
+[ext_resource type="Script" uid="uid://djr3i1r1fsyan" path="res://Scenes/Item/Checkpoint/checkpoint.gd" id="1_grw82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo7p1"]
+size = Vector2(62, 94)
+
+[node name="Checkpoint" type="Area2D" unique_id=1547685949]
+script = ExtResource("1_grw82")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1898375646]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_fo7p1")
+region_enabled = true
+region_rect = Rect2(495, 280, 432, 624)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1922334926]
+shape = SubResource("RectangleShape2D_fo7p1")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=53549805]
+position = Vector2(70, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_player_entered"]

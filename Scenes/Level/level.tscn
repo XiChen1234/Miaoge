@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bdg4eg6xw7teb"]
+
+[ext_resource type="Script" uid="uid://b3k78rmnusx7p" path="res://Scenes/Level/level.gd" id="1_iheil"]
+[ext_resource type="PackedScene" uid="uid://nn05re6b45xy" path="res://Scenes/Item/Checkpoint/checkpoint.tscn" id="2_1ov45"]
+
+[node name="Level" type="Node2D" unique_id=1015833882]
+script = ExtResource("1_iheil")
+
+[node name="Checkpoints" type="Node2D" parent="." unique_id=1264216311]
+
+[node name="Checkpoint" parent="Checkpoints" unique_id=1547685949 instance=ExtResource("2_1ov45")]
+
+[node name="World" type="Node2D" parent="." unique_id=674977725]
+
+[node name="StaticWorld" type="Node2D" parent="World" unique_id=218725469]
+
+[node name="Entities" type="Node2D" parent="." unique_id=11080496]

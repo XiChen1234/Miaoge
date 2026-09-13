@@ -134,5 +134,6 @@ func _on_hurt_box_entered(body: Node2D) -> void:
 	if _is_invincible:
 		return
 	
-	if body is Spike:
+	print(body)
+	if body is SpikeLayer:
 		state_machine.handle_event(&"hurt", {"damage": 1, "source": body})

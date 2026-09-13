@@ -1,0 +1,36 @@
+[gd_scene format=4 uid="uid://curclcbn3l2n8"]
+
+[ext_resource type="PackedScene" uid="uid://bdg4eg6xw7teb" path="res://Scenes/Level/level.tscn" id="1_qdp5y"]
+[ext_resource type="Script" uid="uid://yjkhoka1obg8" path="res://Scenes/Level/level_01.gd" id="2_ibctf"]
+[ext_resource type="PackedScene" uid="uid://c1521yk30ar12" path="res://Scenes/Player/player.tscn" id="3_is2rj"]
+[ext_resource type="PackedScene" uid="uid://nn05re6b45xy" path="res://Scenes/Item/Checkpoint/checkpoint.tscn" id="3_nub01"]
+[ext_resource type="TileSet" uid="uid://h84yivhvjfa2" path="res://Resources/Item/Brick/brick_tile_set.tres" id="3_sxgrb"]
+[ext_resource type="PackedScene" uid="uid://cmv3y7wyfra7h" path="res://Scenes/Item/Spike/spike_layer.tscn" id="4_v4dkl"]
+
+[node name="Level01" unique_id=1015833882 instance=ExtResource("1_qdp5y")]
+script = ExtResource("2_ibctf")
+
+[node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(1264216311) index="0" unique_id=1547685949]
+position = Vector2(-686, 205)
+
+[node name="Checkpoint2" parent="Checkpoints" parent_id_path=PackedInt32Array(1264216311) index="1" unique_id=1553233800 instance=ExtResource("3_nub01")]
+position = Vector2(196, 256)
+
+[node name="GroundLayer" type="TileMapLayer" parent="World/StaticWorld" parent_id_path=PackedInt32Array(218725469) index="0" unique_id=1735390104]
+scale = Vector2(0.15, 0.15)
+tile_map_data = PackedByteArray("AAD6/woAAAAAAAUAAAD7/woAAAAAAAUAAAD8/woAAAAAAAUAAAD9/woAAAAAAAUAAAD+/woAAAAAAAUAAAD//woAAAAAAAUAAAD6/wsAAAAAAAUAAAD7/wsAAAAAAAUAAAD8/wsAAAAAAAUAAAD9/wsAAAAAAAUAAAD+/wsAAAAAAAUAAAD//wsAAAAAAAUAAAD6/wwAAAAAAAUAAAD7/wwAAAAAAAUAAAD8/wwAAAAAAAUAAAD9/wwAAAAAAAUAAAD+/wwAAAAAAAUAAAD//wwAAAAAAAUAAAD5/woAAAAAAAUAAAD5/wsAAAAAAAUAAAD5/wwAAAAAAAUAAAD4/wwAAAAAAAUAAAD3/wwAAAAAAAUAAAD2/wwAAAAAAAUAAAD1/wwAAAAAAAUAAAD0/wwAAAAAAAUAAADz/wwAAAAAAAUAAADy/wwAAAAAAAUAAADy/wsAAAAAAAUAAADx/wsAAAAAAAUAAADw/wsAAAAAAAUAAADv/wsAAAAAAAUAAADu/wsAAAAAAAUAAADu/wwAAAAAAAUAAADv/wwAAAAAAAUAAADw/wwAAAAAAAUAAADx/wwAAAAAAAUAAADu/woAAAAAAAUAAADv/woAAAAAAAUAAADw/woAAAAAAAUAAADx/woAAAAAAAUAAADy/woAAAAAAAUAAADz/woAAAAAAAUAAAD0/woAAAAAAAUAAAD1/woAAAAAAAUAAAD2/woAAAAAAAUAAAD3/woAAAAAAAUAAAD4/woAAAAAAAUAAAD4/wsAAAAAAAUAAAD3/wsAAAAAAAUAAAD2/wsAAAAAAAUAAAD1/wsAAAAAAAUAAAD0/wsAAAAAAAUAAADz/wsAAAAAAAUAAAD8/wkAAAAAAAUAAAD9/wkAAAAAAAUAAAD+/wkAAAAAAAUAAAD//wkAAAAAAAUAAAD8/wgAAAAAAAUAAAD9/wgAAAAAAAUAAAD+/wgAAAAAAAUAAAD//wgAAAAAAAUAAAD8/wcAAAAAAAUAAAD9/wcAAAAAAAUAAAD+/wcAAAAAAAUAAAD//wcAAAAAAAUAAAAAAAwAAAAAAAUAAAABAAwAAAAAAAUAAAACAAwAAAAAAAUAAAADAAwAAAAAAAUAAAAEAAwAAAAAAAUAAAAFAAwAAAAAAAUAAAAGAAwAAAAAAAUAAAAHAAwAAAAAAAUAAAAIAAwAAAAAAAUAAAAJAAwAAAAAAAUAAAAKAAwAAAAAAAUAAAALAAwAAAAAAAUAAAAMAAwAAAAAAAUAAAANAAwAAAAAAAUAAAAOAAwAAAAAAAUAAAAPAAwAAAAAAAUAAAAQAAwAAAAAAAUAAAARAAwAAAAAAAUAAAASAAwAAAAAAAUAAAATAAwAAAAAAAUAAAAUAAwAAAAAAAUAAAAVAAwAAAAAAAUAAAAWAAwAAAAAAAUAAADu/wEAAAAAAAUAAADu/wIAAAAAAAUAAADu/wMAAAAAAAUAAADu/wQAAAAAAAUAAADu/wUAAAAAAAUAAADu/wYAAAAAAAUAAADu/wcAAAAAAAUAAADu/wgAAAAAAAUAAADu/wkAAAAAAAUAAAA=")
+tile_set = ExtResource("3_sxgrb")
+
+[node name="SpikeLayer" parent="World/StaticWorld" parent_id_path=PackedInt32Array(218725469) index="1" unique_id=1037171049 instance=ExtResource("4_v4dkl")]
+
+[node name="Player" parent="Entities" parent_id_path=PackedInt32Array(11080496) index="0" unique_id=929601081 instance=ExtResource("3_is2rj")]
+_max_speed = null
+_accel = null
+_decel = null
+_jump_velocity = null
+_gravity = null
+_max_fall_speed = null
+_max_health = null
+_hurt_duration = null
+_knockback_speed = null
+_knockback_decel = null

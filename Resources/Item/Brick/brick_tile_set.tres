@@ -1,0 +1,22 @@
+[gd_resource type="TileSet" format=3 uid="uid://h84yivhvjfa2"]
+
+[ext_resource type="Texture2D" uid="uid://bbm7xkd8lhb1j" path="res://Resources/Item/Brick/Bricks.png" id="1_dbria"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lscpc"]
+texture = ExtResource("1_dbria")
+texture_region_size = Vector2i(288, 168)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, 144, -84, 144, 84, -144, 84)
+4:9/0 = 0
+4:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, 144, -84, 144, 84, -144, 84)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, 144, -84, 144, 84, -144, 84)
+3:14/0 = 0
+3:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, 144, -84, 144, 84, -144, 84)
+5:15/0 = 0
+5:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, 144, -84, 144, 84, -144, 84)
+
+[resource]
+tile_size = Vector2i(288, 168)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_lscpc")
