@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Miaoge"
-run/main_scene="uid://curclcbn3l2n8"
+run/main_scene="uid://cxbvo2kkrhame"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://bam4ifocy0dw5"
 
 [display]
 
