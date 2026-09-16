@@ -3,6 +3,7 @@ extends PlayerState
 
 @onready var idle_state: State = $"../IdleState"
 @onready var walk_state: PlayerWalkState = $"../WalkState"
+@onready var jump_state: State = $"../JumpState"
 
 
 func enter(_data: Variant = null) -> void:
@@ -13,6 +14,10 @@ func enter(_data: Variant = null) -> void:
 
 
 func physics_update(delta: float) -> void:
+	if Input.is_action_just_pressed("jump"):
+		state_machine.change_state(jump_state)
+		return
+	
 	var direction = Input.get_axis("move_left", "move_right")
 
 	if direction != 0:
