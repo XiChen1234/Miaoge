@@ -3,7 +3,7 @@ class_name Player
 
 
 signal animation_finished(animation_name: StringName)
-signal dead()
+signal death_signal()
 
 
 # ===== 移动 =====
@@ -104,7 +104,17 @@ func take_damage(damage: int) -> void:
 ## 玩家死亡接口
 func die() -> void:
 	state_machine.handle_event(&"death")
-	dead.emit()
+
+
+## 玩家重生接口
+func respawn(spawn_position: Vector2) -> void:
+	global_position = spawn_position
+	velocity = Vector2.ZERO
+	health = _max_health
+	set_invincible(false)
+	visual.modulate.a = 1.0
+	visual.position = Vector2.ZERO
+	state_machine.change_state(state_machine.init_state)
 
 
 ## 玩家无敌状态设置接口

@@ -10,11 +10,16 @@
 [node name="Level01" unique_id=1015833882 instance=ExtResource("1_qdp5y")]
 script = ExtResource("2_ibctf")
 
-[node name="Checkpoint" parent="Checkpoints" parent_id_path=PackedInt32Array(1264216311) index="0" unique_id=1547685949]
+[node name="SpawnPoint" parent="Checkpoints" parent_id_path=PackedInt32Array(1264216311) index="0" unique_id=1547685949]
 position = Vector2(-686, 205)
 
-[node name="Checkpoint2" parent="Checkpoints" parent_id_path=PackedInt32Array(1264216311) index="1" unique_id=1553233800 instance=ExtResource("3_nub01")]
+[node name="Checkpoint1" parent="Checkpoints" parent_id_path=PackedInt32Array(1264216311) index="1" unique_id=1553233800 instance=ExtResource("3_nub01")]
 position = Vector2(196, 256)
+index = 1
+
+[node name="Checkpoint2" parent="Checkpoints" parent_id_path=PackedInt32Array(1264216311) index="2" unique_id=493231393 instance=ExtResource("3_nub01")]
+position = Vector2(627, 256)
+index = 2
 
 [node name="GroundLayer" type="TileMapLayer" parent="World/StaticWorld" parent_id_path=PackedInt32Array(218725469) index="0" unique_id=1735390104]
 scale = Vector2(0.15, 0.15)

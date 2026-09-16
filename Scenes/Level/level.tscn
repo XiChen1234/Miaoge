@@ -8,7 +8,8 @@ script = ExtResource("1_iheil")
 
 [node name="Checkpoints" type="Node2D" parent="." unique_id=1264216311]
 
-[node name="Checkpoint" parent="Checkpoints" unique_id=1547685949 instance=ExtResource("2_1ov45")]
+[node name="SpawnPoint" parent="Checkpoints" unique_id=1547685949 instance=ExtResource("2_1ov45")]
+is_active = true
 
 [node name="World" type="Node2D" parent="." unique_id=674977725]
 

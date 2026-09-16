@@ -21,17 +21,20 @@ func _on_body_faded() -> void:
 
 	var tween := player.create_tween()
 	tween.set_parallel(true)
-
 	tween.tween_property(
 		player.visual,
 		"position:y",
 		player.visual.position.y - 80.0,
 		1.2
 	)
-
 	tween.tween_property(
 		player.visual,
 		"modulate:a",
 		0.0,
 		1.2
 	)
+	tween.finished.connect(_on_death_animation_finished)
+
+
+func _on_death_animation_finished() -> void:
+	player.death_signal.emit()

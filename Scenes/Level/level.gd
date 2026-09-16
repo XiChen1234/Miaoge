@@ -2,7 +2,7 @@ extends Node2D
 class_name Level
 
 
-@onready var player: Player = $Entities/Player
+@onready var player: Player = $Entities/Player # 这个Player是一定有的
 @onready var checkpoints: Node2D = $Checkpoints
 
 var current_checkpoint: Checkpoint
@@ -14,8 +14,9 @@ func _ready() -> void:
 			child.player_entered_checkpoint.connect(_on_checkpoint_entered)
 			if child.index == 0:
 				current_checkpoint = child
-		
-
+	
+	player.death_signal.connect(_on_player_death)
+	player.global_position = current_checkpoint.spawn_point.global_position
 
 func _on_checkpoint_entered(checkpoint: Checkpoint) -> void:
 	if current_checkpoint == null:
@@ -23,3 +24,9 @@ func _on_checkpoint_entered(checkpoint: Checkpoint) -> void:
 	
 	if checkpoint.index > current_checkpoint.index:
 		current_checkpoint = checkpoint
+
+
+func _on_player_death() -> void:
+	print("death")
+	print("玩家死亡，当前检查点：", current_checkpoint.index)
+	player.respawn(current_checkpoint.spawn_point.global_position)

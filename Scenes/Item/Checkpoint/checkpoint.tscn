@@ -19,6 +19,6 @@ region_rect = Rect2(495, 280, 432, 624)
 shape = SubResource("RectangleShape2D_fo7p1")
 
 [node name="SpawnPoint" type="Marker2D" parent="." unique_id=53549805]
-position = Vector2(70, 0)
+position = Vector2(0, -200)
 
 [connection signal="body_entered" from="." to="." method="_on_player_entered"]
