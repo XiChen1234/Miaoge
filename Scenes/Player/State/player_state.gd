@@ -3,8 +3,8 @@ class_name PlayerState
 
 
 @onready var player: Player = $"../.."
-@onready var hurt_state: PlayerHurtState = $"../HurtState"
-@onready var death_state: PlayerState = $"../DeathState"
+@onready var hurt_state: State = $"../HurtState"
+@onready var death_state: State = $"../DeathState"
 
 
 func handle_event(_event: StringName, _data: Variant = null) -> void:

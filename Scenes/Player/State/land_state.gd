@@ -2,7 +2,7 @@ extends PlayerState
 
 
 @onready var idle_state: State = $"../IdleState"
-@onready var walk_state: PlayerWalkState = $"../WalkState"
+@onready var walk_state: State = $"../WalkState"
 @onready var jump_state: State = $"../JumpState"
 
 
@@ -19,7 +19,6 @@ func physics_update(delta: float) -> void:
 		return
 	
 	var direction = Input.get_axis("move_left", "move_right")
-
 	if direction != 0:
 		player.move(direction, delta)
 	else:

@@ -75,7 +75,7 @@ func stop(delta: float) -> void:
 
 
 ## 获取玩家左右移动状态的接口
-func is_stoped() -> bool:
+func is_stopped() -> bool:
 	return is_zero_approx(velocity.x)
 
 

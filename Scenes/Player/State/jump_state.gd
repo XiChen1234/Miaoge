@@ -1,5 +1,4 @@
 extends PlayerState
-class_name PlayerJumpState
 
 
 @onready var fall_state: State = $"../FallState"

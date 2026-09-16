@@ -1,5 +1,6 @@
 extends PlayerState
 
+
 func enter(_data: Variant = null) -> void:
 	player.velocity = Vector2.ZERO
 	player.set_invincible(true)

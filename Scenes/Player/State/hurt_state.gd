@@ -1,5 +1,5 @@
 extends PlayerState
-class_name PlayerHurtState
+
 
 @onready var idle_state: State = $"../IdleState"
 
