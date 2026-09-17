@@ -1,0 +1,17 @@
+[gd_scene format=4 uid="uid://b8a26mqwwlb6n"]
+
+[ext_resource type="PackedScene" uid="uid://bdg4eg6xw7teb" path="res://Scenes/Level/level.tscn" id="1_2pxjg"]
+
+[node name="Level04" unique_id=1015833882 instance=ExtResource("1_2pxjg")]
+
+[node name="SpawnPoint" parent="Checkpoints" parent_id_path=PackedInt32Array(1264216311) index="0" unique_id=1547685949]
+position = Vector2(-562, 258)
+
+[node name="ExitArea" parent="Checkpoints" parent_id_path=PackedInt32Array(1264216311) index="1" unique_id=987677572]
+position = Vector2(771, 256)
+
+[node name="GroundLayer" parent="World/StaticWorld" parent_id_path=PackedInt32Array(218725469) index="0" unique_id=415784859]
+tile_map_data = PackedByteArray("AADy/wwAAAADAA4AAADz/wwAAAADAA4AAAD0/wwAAAADAA4AAAD1/wwAAAADAA4AAAD2/wwAAAADAA4AAAD3/wwAAAADAA4AAAD4/wwAAAADAA4AAAD5/wwAAAADAA4AAAD6/wwAAAADAA4AAAD7/wwAAAADAA4AAAD8/wwAAAADAA4AAAD9/wwAAAADAA4AAAD+/wwAAAADAA4AAAD//wwAAAADAA4AAAAAAAwAAAADAA4AAAABAAwAAAADAA4AAAACAAwAAAADAA4AAAADAAwAAAADAA4AAAAEAAwAAAADAA4AAAAFAAwAAAADAA4AAAAGAAwAAAADAA4AAAAHAAwAAAADAA4AAAAIAAwAAAADAA4AAAAJAAwAAAADAA4AAAAKAAwAAAADAA4AAAALAAwAAAADAA4AAAAMAAwAAAADAA4AAAANAAwAAAADAA4AAAAOAAwAAAADAA4AAAAPAAwAAAADAA4AAAAQAAwAAAADAA4AAAARAAwAAAADAA4AAAASAAwAAAADAA4AAAA=")
+
+[node name="SpikeLayer" parent="World/StaticWorld" parent_id_path=PackedInt32Array(218725469) index="1" unique_id=1037171049]
+tile_map_data = PackedByteArray("AAD//wsABQAIAA4AAAAAAAsABQAIAA4AAAA=")

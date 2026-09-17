@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://7x7d5n5v8ro8"]
+
+[ext_resource type="Script" uid="uid://77s6oj1nse72" path="res://Scenes/Item/Checkpoint/exit_area.gd" id="1_6lp3k"]
+[ext_resource type="Texture2D" uid="uid://jep827oddqye" path="res://Resources/Item/Stele/stele-exit.png" id="1_d2e81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lscpc"]
+size = Vector2(62, 94)
+
+[node name="ExitArea" type="Area2D" unique_id=987677572]
+script = ExtResource("1_6lp3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2102033493]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_d2e81")
+region_enabled = true
+region_rect = Rect2(495, 280, 432, 624)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=524588619]
+shape = SubResource("RectangleShape2D_lscpc")
+
+[connection signal="body_entered" from="." to="." method="_on_player_entered"]

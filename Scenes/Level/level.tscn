@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b3k78rmnusx7p" path="res://Scenes/Level/level.gd" id="1_iheil"]
 [ext_resource type="PackedScene" uid="uid://nn05re6b45xy" path="res://Scenes/Item/Checkpoint/checkpoint.tscn" id="2_1ov45"]
+[ext_resource type="PackedScene" uid="uid://7x7d5n5v8ro8" path="res://Scenes/Item/Checkpoint/exit_area.tscn" id="3_lscpc"]
+[ext_resource type="PackedScene" uid="uid://c1521yk30ar12" path="res://Scenes/Player/player.tscn" id="4_06ioy"]
+[ext_resource type="PackedScene" uid="uid://b3nlmhi4empbv" path="res://Scenes/Item/ground_layer.tscn" id="4_x701m"]
+[ext_resource type="PackedScene" uid="uid://cmv3y7wyfra7h" path="res://Scenes/Item/Spike/spike_layer.tscn" id="5_7i4w6"]
 
 [node name="Level" type="Node2D" unique_id=1015833882]
 script = ExtResource("1_iheil")
@@ -11,8 +15,18 @@ script = ExtResource("1_iheil")
 [node name="SpawnPoint" parent="Checkpoints" unique_id=1547685949 instance=ExtResource("2_1ov45")]
 is_active = true
 
+[node name="ExitArea" parent="Checkpoints" unique_id=987677572 instance=ExtResource("3_lscpc")]
+
 [node name="World" type="Node2D" parent="." unique_id=674977725]
 
 [node name="StaticWorld" type="Node2D" parent="World" unique_id=218725469]
 
+[node name="GroundLayer" parent="World/StaticWorld" unique_id=415784859 instance=ExtResource("4_x701m")]
+tile_map_data = PackedByteArray()
+
+[node name="SpikeLayer" parent="World/StaticWorld" unique_id=1037171049 instance=ExtResource("5_7i4w6")]
+tile_map_data = PackedByteArray()
+
 [node name="Entities" type="Node2D" parent="." unique_id=11080496]
+
+[node name="Player" parent="Entities" unique_id=929601081 instance=ExtResource("4_06ioy")]
