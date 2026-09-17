@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bc57g73fseymj"]
+
+[ext_resource type="Texture2D" uid="uid://bbm7xkd8lhb1j" path="res://Resources/Item/Brick/Bricks.png" id="1_r0f3j"]
+[ext_resource type="Texture2D" uid="uid://baiougc2xcx44" path="res://Resources/Item/Brick/Level5.png" id="2_gtc45"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtc45"]
+texture = ExtResource("1_r0f3j")
+texture_region_size = Vector2i(288, 84)
+0:11/size_in_atlas = Vector2i(1, 2)
+0:11/0 = 0
+0:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, 144, -84, 144, 0, -144, 0)
+0:11/0/physics_layer_0/polygon_0/one_way = true
+4:19/size_in_atlas = Vector2i(1, 2)
+4:19/0 = 0
+4:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, 144, -84, 144, 0, -144, 0)
+4:19/0/physics_layer_0/polygon_0/one_way = true
+3:29/size_in_atlas = Vector2i(1, 2)
+3:29/0 = 0
+3:29/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, 144, -84, 144, 0, -144, 0)
+3:29/0/physics_layer_0/polygon_0/one_way = true
+7:7/size_in_atlas = Vector2i(1, 2)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, 144, -84, 144, 0, -144, 0)
+7:7/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wovol"]
+texture = ExtResource("2_gtc45")
+margins = Vector2i(255, 105)
+texture_region_size = Vector2i(288, 84)
+1:11/size_in_atlas = Vector2i(1, 2)
+1:11/0 = 0
+1:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144, -84, 144, -84, 144, 0, -144, 0)
+1:11/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSet" id="TileSet_bka8r"]
+tile_size = Vector2i(288, 168)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_gtc45")
+sources/1 = SubResource("TileSetAtlasSource_wovol")
+
+[node name="NormalPlatform" type="TileMapLayer" unique_id=1905764951]
+scale = Vector2(0.15, 0.15)
+tile_set = SubResource("TileSet_bka8r")

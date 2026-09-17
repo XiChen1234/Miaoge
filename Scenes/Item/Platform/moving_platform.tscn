@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bl1o2xj41rwev"]
+
+[ext_resource type="Texture2D" uid="uid://ojxhqqk8ngcd" path="res://Resources/Item/MovingPlatform/lv01-03_m_platform.png" id="1_demu8"]
+[ext_resource type="Script" uid="uid://dc2jvsl5ng7mt" path="res://Scenes/Item/Platform/moving_platform.gd" id="1_xyu7l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(540, 128)
+
+[node name="MovingPlatform" type="AnimatableBody2D" unique_id=104553502]
+scale = Vector2(0.15, 0.15)
+collision_layer = 2
+script = ExtResource("1_xyu7l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=522020830]
+texture = ExtResource("1_demu8")
+region_enabled = true
+region_rect = Rect2(1440, 624, 544, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1184244312]
+shape = SubResource("RectangleShape2D_xrivr")
+one_way_collision = true
+
+[node name="EndPoint" type="Marker2D" parent="." unique_id=669659999]

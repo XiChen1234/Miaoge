@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1521yk30ar12" path="res://Scenes/Player/player.tscn" id="4_06ioy"]
 [ext_resource type="PackedScene" uid="uid://b3nlmhi4empbv" path="res://Scenes/Item/ground_layer.tscn" id="4_x701m"]
 [ext_resource type="PackedScene" uid="uid://cmv3y7wyfra7h" path="res://Scenes/Item/Spike/spike_layer.tscn" id="5_7i4w6"]
+[ext_resource type="PackedScene" uid="uid://bc57g73fseymj" path="res://Scenes/Item/Platform/normal_platform.tscn" id="6_q8n36"]
 
 [node name="Level" type="Node2D" unique_id=1015833882]
 script = ExtResource("1_iheil")
@@ -26,6 +27,10 @@ tile_map_data = PackedByteArray()
 
 [node name="SpikeLayer" parent="World/StaticWorld" unique_id=1037171049 instance=ExtResource("5_7i4w6")]
 tile_map_data = PackedByteArray()
+
+[node name="NormalPlatform" parent="World/StaticWorld" unique_id=1905764951 instance=ExtResource("6_q8n36")]
+
+[node name="DynamicWorld" type="Node2D" parent="World" unique_id=445167408]
 
 [node name="Entities" type="Node2D" parent="." unique_id=11080496]
 
