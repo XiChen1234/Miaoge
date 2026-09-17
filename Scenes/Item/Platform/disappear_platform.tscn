@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bq3s15h086hd3"]
+
+[ext_resource type="Script" uid="uid://sr12fylfw3s2" path="res://Scenes/Item/Platform/disappear_platform.gd" id="1_5qgop"]
+[ext_resource type="Texture2D" uid="uid://cfy77x378ll0h" path="res://Resources/Others/Disappearing_Planform_7f/disappear_00.png.png" id="2_gb0qv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(692, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(692, 20)
+
+[node name="DisappearPlatform" type="AnimatableBody2D" unique_id=679753663]
+scale = Vector2(0.15, 0.15)
+collision_layer = 2
+script = ExtResource("1_5qgop")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1734940789]
+texture = ExtResource("2_gb0qv")
+region_enabled = true
+region_rect = Rect2(463, 285, 692, 136)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2053754106]
+shape = SubResource("RectangleShape2D_xrivr")
+one_way_collision = true
+
+[node name="DisappearArea" type="Area2D" parent="." unique_id=78136351]
+position = Vector2(0, -73.33333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DisappearArea" unique_id=175185168]
+shape = SubResource("RectangleShape2D_13qdw")
+debug_color = Color(0.9605481, 0.18237653, 0.21952811, 0.41960785)
+
+[connection signal="body_entered" from="DisappearArea" to="." method="_on_player_entered"]
