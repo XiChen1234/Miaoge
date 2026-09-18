@@ -25,3 +25,5 @@ func next_level() -> void:
 		get_tree().change_scene_to_packed(LEVELS[current_level])
 	else:
 		print("game over")
+		get_tree().change_scene_to_packed(MAIN_MENU)
+		current_level = 0
