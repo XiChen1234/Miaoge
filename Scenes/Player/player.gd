@@ -3,6 +3,7 @@ class_name Player
 
 
 signal animation_finished(animation_name: StringName)
+@warning_ignore("unused_signal")
 signal death_signal()
 
 
