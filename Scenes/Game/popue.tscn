@@ -4,12 +4,16 @@
 [ext_resource type="FontFile" uid="uid://dpcgwc20dhuu7" path="res://Resources/Fonts/AlimamaFangYuanTiVF-Thin-2..ttf" id="1_ubylt"]
 [ext_resource type="Script" uid="uid://d18pqba5h33b3" path="res://Scenes/Game/popue.gd" id="2_3kd55"]
 [ext_resource type="StyleBox" uid="uid://cs64pucjdyitv" path="res://Resources/UI/popue_hover_button.tres" id="2_fln1m"]
+[ext_resource type="StyleBox" uid="uid://cs24pow72ffdr" path="res://Resources/UI/Main/transparent_box_flat.tres" id="3_trsjd"]
 [ext_resource type="Texture2D" uid="uid://ck5mpw36sgo34" path="res://Resources/UI/Main/main_img_menue.png" id="5_fln1m"]
+[ext_resource type="Texture2D" uid="uid://fx2oely2vlih" path="res://Resources/UI/Main/main_img_exit.png" id="6_od05k"]
 
 [sub_resource type="Theme" id="Theme_3kd55"]
 Button/font_sizes/font_size = 42
 Button/fonts/font = ExtResource("1_ubylt")
 Button/styles/hover = ExtResource("2_fln1m")
+Button/styles/normal = ExtResource("3_trsjd")
+Label/font_sizes/font_size = 36
 Label/fonts/font = ExtResource("1_ubylt")
 
 [node name="Popue" type="Control" unique_id=1654886956]
@@ -55,7 +59,7 @@ offset_bottom = 269.0
 grow_horizontal = 2
 texture = ExtResource("5_fln1m")
 
-[node name="Label" type="Label" parent="Background/Title" unique_id=54885925]
+[node name="TitleLabel" type="Label" parent="Background/Title" unique_id=54885925]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -72,7 +76,7 @@ theme_override_colors/font_color = Color(0.24313726, 0.6901961, 0.75686276, 1)
 theme_override_font_sizes/font_size = 64
 text = "菜单"
 
-[node name="SavesVBox" type="VBoxContainer" parent="Background" unique_id=1161078850]
+[node name="SavesVBox" type="VBoxContainer" parent="Background" unique_id=1869636671]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -80,11 +84,70 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -20.0
+offset_top = -8.5
 offset_right = 20.0
-offset_bottom = 20.0
+offset_bottom = 8.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="Background/SavesVBox" unique_id=1653442795]
+layout_mode = 2
+text = "存档"
+
+[node name="PauseVBox" type="VBoxContainer" parent="Background" unique_id=749057719]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SavesButton" type="Button" parent="Background/PauseVBox" unique_id=629005935]
+layout_mode = 2
+text = "读档"
+
+[node name="SettingsButton" type="Button" parent="Background/PauseVBox" unique_id=333352307]
+layout_mode = 2
+text = "设置"
+
+[node name="TextureRect" type="TextureRect" parent="Background/PauseVBox" unique_id=1609676105]
+layout_mode = 2
+texture = ExtResource("6_od05k")
+
+[node name="ExitButton" type="Button" parent="Background/PauseVBox/TextureRect" unique_id=1523721719]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -25.5
+offset_right = 94.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "退出游戏"
+
+[node name="SettingsVBox" type="VBoxContainer" parent="Background" unique_id=2051085115]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Background/SettingsVBox" unique_id=346588324]
+layout_mode = 2
+text = "设置"
 
 [node name="BackButton" type="Button" parent="Background" unique_id=1783382788]
 layout_mode = 1
@@ -102,4 +165,7 @@ grow_vertical = 0
 text = "返回"
 
 [connection signal="gui_input" from="Mask" to="." method="_on_mask_clicked"]
+[connection signal="pressed" from="Background/PauseVBox/SavesButton" to="." method="_on_saves_button_pressed"]
+[connection signal="pressed" from="Background/PauseVBox/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Background/PauseVBox/TextureRect/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Background/BackButton" to="." method="_on_back"]

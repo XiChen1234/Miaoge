@@ -9,12 +9,32 @@ enum Mode {
 const PANEL_WIDTH: float = 652.0
 const ANIMATE_DURATION: float = 0.38
 
+const TITLE_DICTIONARY: Dictionary = {
+	Mode.SAVES: {
+		"text": "存档",
+		"texture": preload("res://Resources/UI/Main/main_img_loadgame.png"),
+	},
+	Mode.SETTINGS: {
+		"text": "设置",
+		"texture": preload("res://Resources/UI/Main/main_img_setting.png"),
+	},
+	Mode.PAUSE: {
+		"text": "菜单",
+		"texture": preload("res://Resources/UI/Main/main_img_menue.png"),
+	},
+}
+
 var is_open: bool = false
 var current_mode: Mode
 var _tween: Tween
 
 @onready var mask: ColorRect = $Mask
 @onready var background: TextureRect = $Background
+@onready var title: TextureRect = $Background/Title
+@onready var title_label: Label = $Background/Title/TitleLabel
+@onready var saves_v_box: VBoxContainer = $Background/SavesVBox
+@onready var pause_v_box: VBoxContainer = $Background/PauseVBox
+@onready var settings_v_box: VBoxContainer = $Background/SettingsVBox
 
 
 func _ready() -> void:
@@ -22,7 +42,11 @@ func _ready() -> void:
 	background.offset_right = PANEL_WIDTH
 	mask.modulate.a = 0
 	mask.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	
 	visible = false
+	saves_v_box.visible = false
+	pause_v_box.visible = false
+	settings_v_box.visible = false
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -41,7 +65,17 @@ func open(mode: Mode) -> void:
 	is_open = true
 	visible = true
 	current_mode = mode
+	
+	_update_content()
 	_open_animate()
+
+
+func switch_mode(mode: Mode) -> void:
+	if not is_open:
+		return
+	
+	current_mode = mode
+	_update_content()
 
 
 func close() -> void:
@@ -49,8 +83,7 @@ func close() -> void:
 		return
 	
 	is_open = false
-	if current_mode == Mode.PAUSE:
-		get_tree().paused = false
+	get_tree().paused = false
 	
 	_close_animate()
 
@@ -83,6 +116,24 @@ func _close_animate() -> void:
 	)
 
 
+func _update_content() -> void:
+	saves_v_box.visible = false
+	pause_v_box.visible = false
+	settings_v_box.visible = false
+
+	match current_mode:
+		Mode.SAVES:
+			saves_v_box.visible = true
+		Mode.PAUSE:
+			pause_v_box.visible = true
+		Mode.SETTINGS:
+			settings_v_box.visible = true
+
+	var title_data: Dictionary = TITLE_DICTIONARY[current_mode]
+	title.texture = title_data["texture"]
+	title_label.text = title_data["text"]
+
+
 func _on_mask_clicked(event: InputEvent) -> void:
 		if event is InputEventMouseButton \
 			and event.pressed \
@@ -94,3 +145,16 @@ func _on_mask_clicked(event: InputEvent) -> void:
 func _on_back() -> void:
 	close()
 	get_viewport().set_input_as_handled()
+
+
+func _on_saves_button_pressed() -> void:
+	switch_mode(Mode.SAVES)
+
+
+func _on_settings_button_pressed() -> void:
+	switch_mode(Mode.SETTINGS)
+
+
+func _on_exit_button_pressed() -> void:
+	close()
+	get_tree().change_scene_to_packed(GameManager.MAIN_MENU)
