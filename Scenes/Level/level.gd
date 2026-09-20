@@ -5,6 +5,7 @@ class_name Level
 @onready var player: Player = $Entities/Player # 这个Player是一定有的
 @onready var checkpoints: Node2D = $Checkpoints
 @onready var exit_area: ExitArea = $Checkpoints/ExitArea
+@onready var popue: Popue = $UI/Popue
 
 @export var index: int = 0
 
@@ -22,6 +23,13 @@ func _ready() -> void:
 	
 	player.death_signal.connect(_on_player_death)
 	player.global_position = current_checkpoint.spawn_point.global_position
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("esc"):
+		get_tree().paused = true
+		popue.open(Popue.Mode.PAUSE)
+
 
 func _on_checkpoint_entered(checkpoint: Checkpoint) -> void:
 	if current_checkpoint == null:
