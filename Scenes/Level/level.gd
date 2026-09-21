@@ -6,6 +6,7 @@ class_name Level
 @onready var checkpoints: Node2D = $Checkpoints
 @onready var exit_area: ExitArea = $Checkpoints/ExitArea
 @onready var popue: Popue = $UI/Popue
+@onready var hud: HUD = $UI/HUD	
 
 @export var index: int = 0
 
@@ -23,6 +24,8 @@ func _ready() -> void:
 	
 	player.death_signal.connect(_on_player_death)
 	player.global_position = current_checkpoint.spawn_point.global_position
+	
+	player.health_changed.connect(_on_player_health_changed)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -47,3 +50,7 @@ func _on_player_death() -> void:
 	print("death")
 	print("玩家死亡，当前检查点：", current_checkpoint.index)
 	player.respawn(current_checkpoint.spawn_point.global_position)
+
+
+func _on_player_health_changed(health: int) -> void:
+	hud.update_health(health)

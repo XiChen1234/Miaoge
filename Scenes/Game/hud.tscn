@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cx8xoshc3fy46"]
+
+[ext_resource type="Texture2D" uid="uid://c64ovnr8v6oeh" path="res://Resources/UI/HUD/main_icon_blood.png" id="1_gp0vr"]
+[ext_resource type="Script" uid="uid://bs1gu285jnltx" path="res://Scenes/Game/hud.gd" id="1_loliu"]
+[ext_resource type="Texture2D" uid="uid://btl4plk1x0gm7" path="res://Resources/UI/HUD/main_img_head.png" id="3_51blj"]
+[ext_resource type="Texture2D" uid="uid://kqvo5avqa1gt" path="res://Resources/UI/HUD/main_icon_blood2.png" id="3_ixkds"]
+[ext_resource type="Texture2D" uid="uid://dbc0aexvusw5o" path="res://Resources/UI/HUD/main_character_mimi.png" id="4_ixkds"]
+
+[node name="HUD" type="Control" unique_id=109476400]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_loliu")
+heart_texture = ExtResource("1_gp0vr")
+heart_empty_texture = ExtResource("3_ixkds")
+
+[node name="Header" type="TextureRect" parent="." unique_id=210926594]
+custom_minimum_size = Vector2(180, 135)
+layout_mode = 1
+offset_left = 46.0
+offset_top = 46.0
+offset_right = 226.0
+offset_bottom = 181.0
+texture = ExtResource("3_51blj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Name" type="TextureRect" parent="." unique_id=520411783]
+layout_mode = 1
+offset_left = 240.0
+offset_top = 46.0
+offset_right = 360.0
+offset_bottom = 110.0
+texture = ExtResource("4_ixkds")
+expand_mode = 1
+
+[node name="HealthHBox" type="HBoxContainer" parent="." unique_id=1052325518]
+layout_mode = 1
+offset_left = 240.0
+offset_top = 130.0
+offset_right = 408.0
+offset_bottom = 178.0
+theme_override_constants/separation = 12
+
+[node name="Heart" type="TextureRect" parent="HealthHBox" unique_id=1550949055]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("1_gp0vr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart2" type="TextureRect" parent="HealthHBox" unique_id=531312020]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("1_gp0vr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heart3" type="TextureRect" parent="HealthHBox" unique_id=1893000039]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("1_gp0vr")
+expand_mode = 1
+stretch_mode = 5

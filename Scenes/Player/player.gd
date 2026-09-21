@@ -5,6 +5,7 @@ class_name Player
 signal animation_finished(animation_name: StringName)
 @warning_ignore("unused_signal")
 signal death_signal()
+signal health_changed(health: int)
 
 
 # ===== 移动 =====
@@ -100,6 +101,7 @@ func _on_animated_finished() -> void:
 ## 玩家造成伤害接口
 func take_damage(damage: int) -> void:
 	health = health - damage
+	health_changed.emit(health)
 
 
 ## 玩家死亡接口
@@ -112,6 +114,8 @@ func respawn(spawn_position: Vector2) -> void:
 	global_position = spawn_position
 	velocity = Vector2.ZERO
 	health = _max_health
+	health_changed.emit(health)
+	
 	set_invincible(false)
 	visual.modulate.a = 1.0
 	visual.position = Vector2.ZERO

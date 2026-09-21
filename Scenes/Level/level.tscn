@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cmv3y7wyfra7h" path="res://Scenes/Item/Spike/spike_layer.tscn" id="5_7i4w6"]
 [ext_resource type="PackedScene" uid="uid://bc57g73fseymj" path="res://Scenes/Item/Platform/normal_platform.tscn" id="6_q8n36"]
 [ext_resource type="PackedScene" uid="uid://0h1uy8q40ilp" path="res://Scenes/Game/popue.tscn" id="8_362x8"]
+[ext_resource type="PackedScene" uid="uid://cx8xoshc3fy46" path="res://Scenes/Game/hud.tscn" id="9_43gce"]
 
 [node name="Level" type="Node2D" unique_id=1015833882]
 script = ExtResource("1_iheil")
@@ -40,3 +41,6 @@ tile_map_data = PackedByteArray()
 [node name="UI" type="CanvasLayer" parent="." unique_id=1132890195]
 
 [node name="Popue" parent="UI" unique_id=1654886956 instance=ExtResource("8_362x8")]
+visible = false
+
+[node name="HUD" parent="UI" unique_id=109476400 instance=ExtResource("9_43gce")]
