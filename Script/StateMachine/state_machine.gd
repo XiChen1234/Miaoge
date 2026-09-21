@@ -23,10 +23,14 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	if current_state == null:
+		return
 	current_state.update(delta)
 
 
 func _physics_process(delta: float) -> void:
+	if current_state == null:
+		return
 	current_state.physics_update(delta)
 
 
