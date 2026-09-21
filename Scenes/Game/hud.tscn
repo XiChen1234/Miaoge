@@ -43,6 +43,7 @@ offset_left = 240.0
 offset_top = 130.0
 offset_right = 408.0
 offset_bottom = 178.0
+mouse_filter = 2
 theme_override_constants/separation = 12
 
 [node name="Heart" type="TextureRect" parent="HealthHBox" unique_id=1550949055]
