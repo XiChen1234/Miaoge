@@ -2,6 +2,7 @@ extends Control
 class_name Popue
 
 signal closed_signal
+signal exit_signal
 
 # 决定弹窗内容
 enum Mode {
@@ -162,7 +163,7 @@ func _on_settings_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	close()
-	get_tree().change_scene_to_packed(GameManager.MAIN_MENU)
+	exit_signal.emit()
 
 
 func _on_volume_changed(value: float) -> void:

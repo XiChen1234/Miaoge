@@ -22,6 +22,7 @@ func _ready() -> void:
 	
 	exit_area.level_end_signal.connect(_on_level_end)
 	popue.closed_signal.connect(_on_popue_closed)
+	popue.exit_signal.connect(_on_exit_main_menu)
 	
 	player.death_signal.connect(_on_player_death)
 	player.global_position = current_checkpoint.spawn_point.global_position
@@ -50,6 +51,10 @@ func _on_level_end() -> void:
 
 func _on_popue_closed() -> void:
 	get_tree().paused = false
+
+
+func _on_exit_main_menu() -> void:
+	get_tree().change_scene_to_packed(GameManager.MAIN_MENU)
 
 
 func _on_player_death() -> void:
