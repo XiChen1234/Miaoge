@@ -20,11 +20,11 @@ func _ready() -> void:
 			if child.index == 0:
 				current_checkpoint = child
 	
-	exit_area.level_end_signal.connect(_on_level_end)
-	popue.closed_signal.connect(_on_popue_closed)
-	popue.exit_signal.connect(_on_exit_main_menu)
+	exit_area.level_ended.connect(_on_level_end)
+	popue.closed.connect(_on_popue_closed)
+	popue.exit_requested.connect(_on_exit_main_menu)
 	
-	player.death_signal.connect(_on_player_death)
+	player.died.connect(_on_player_death)
 	player.global_position = current_checkpoint.spawn_point.global_position
 	
 	player.health_changed.connect(_on_player_health_changed)

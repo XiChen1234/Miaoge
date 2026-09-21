@@ -1,8 +1,8 @@
 extends Control
 class_name Popue
 
-signal closed_signal
-signal exit_signal
+signal closed # 关闭弹窗的信号
+signal exit_requested # 从level退出游戏的信号
 
 # 决定弹窗内容
 enum Mode {
@@ -89,7 +89,7 @@ func close() -> void:
 		return
 	
 	is_open = false
-	closed_signal.emit()
+	closed.emit()
 	
 	_close_animate()
 
@@ -163,7 +163,7 @@ func _on_settings_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	close()
-	exit_signal.emit()
+	exit_requested.emit()
 
 
 func _on_volume_changed(value: float) -> void:

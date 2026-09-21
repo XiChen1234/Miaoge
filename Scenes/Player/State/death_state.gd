@@ -37,4 +37,4 @@ func _on_body_faded() -> void:
 
 
 func _on_death_animation_finished() -> void:
-	player.death_signal.emit()
+	player.died.emit()
