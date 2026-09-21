@@ -1,13 +1,10 @@
 extends Node
 class_name StateMachine
 
-
 var states: Dictionary = {}
 var current_state: State
 
-
 @export var init_state: State
-
 
 var _debug_label: Label
 
