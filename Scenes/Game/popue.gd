@@ -35,6 +35,7 @@ var _tween: Tween
 @onready var saves_v_box: VBoxContainer = $Background/SavesVBox
 @onready var pause_v_box: VBoxContainer = $Background/PauseVBox
 @onready var settings_v_box: VBoxContainer = $Background/SettingsVBox
+@onready var volume_slider: HSlider = $Background/SettingsVBox/VolumeSlider
 
 
 func _ready() -> void:
@@ -47,6 +48,8 @@ func _ready() -> void:
 	saves_v_box.visible = false
 	pause_v_box.visible = false
 	settings_v_box.visible = false
+	
+	volume_slider.value = db_to_linear(AudioServer.get_bus_volume_db(0))
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -158,3 +161,7 @@ func _on_settings_button_pressed() -> void:
 func _on_exit_button_pressed() -> void:
 	close()
 	get_tree().change_scene_to_packed(GameManager.MAIN_MENU)
+
+
+func _on_volume_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(0, linear_to_db(value))

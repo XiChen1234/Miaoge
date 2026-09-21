@@ -7,6 +7,9 @@
 [ext_resource type="StyleBox" uid="uid://cs24pow72ffdr" path="res://Resources/UI/Main/transparent_box_flat.tres" id="3_trsjd"]
 [ext_resource type="Texture2D" uid="uid://ck5mpw36sgo34" path="res://Resources/UI/Main/main_img_menue.png" id="5_fln1m"]
 [ext_resource type="Texture2D" uid="uid://fx2oely2vlih" path="res://Resources/UI/Main/main_img_exit.png" id="6_od05k"]
+[ext_resource type="Texture2D" uid="uid://dumeu56cq2rtd" path="res://Resources/UI/Menu/main_slide_btn.png" id="8_poyuo"]
+[ext_resource type="Texture2D" uid="uid://dm4c8e613ne8c" path="res://Resources/UI/Menu/main_slide_line.png" id="9_622rt"]
+[ext_resource type="Texture2D" uid="uid://b44eunjgi1rha" path="res://Resources/UI/Menu/main_slide_bg.png" id="10_622rt"]
 
 [sub_resource type="Theme" id="Theme_3kd55"]
 Button/font_sizes/font_size = 42
@@ -15,6 +18,28 @@ Button/styles/hover = ExtResource("2_fln1m")
 Button/styles/normal = ExtResource("3_trsjd")
 Label/font_sizes/font_size = 36
 Label/fonts/font = ExtResource("1_ubylt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ffe64"]
+texture = ExtResource("9_622rt")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_622rt"]
+texture = ExtResource("9_622rt")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_raijx"]
+texture = ExtResource("10_622rt")
+texture_margin_top = 14.0
+texture_margin_bottom = 14.0
+axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 139, 48)
+
+[sub_resource type="Theme" id="Theme_ffe64"]
+HSlider/icons/grabber = ExtResource("8_poyuo")
+HSlider/icons/grabber_highlight = ExtResource("8_poyuo")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_ffe64")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_622rt")
+HSlider/styles/slider = SubResource("StyleBoxTexture_raijx")
 
 [node name="Popue" type="Control" unique_id=1654886956]
 process_mode = 3
@@ -77,6 +102,7 @@ theme_override_font_sizes/font_size = 64
 text = "菜单"
 
 [node name="SavesVBox" type="VBoxContainer" parent="Background" unique_id=1869636671]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -95,6 +121,7 @@ layout_mode = 2
 text = "存档"
 
 [node name="PauseVBox" type="VBoxContainer" parent="Background" unique_id=749057719]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -147,7 +174,13 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Background/SettingsVBox" unique_id=346588324]
 layout_mode = 2
-text = "设置"
+text = "主音量"
+
+[node name="VolumeSlider" type="HSlider" parent="Background/SettingsVBox" unique_id=834901997]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme = SubResource("Theme_ffe64")
+value = 50.0
 
 [node name="BackButton" type="Button" parent="Background" unique_id=1783382788]
 layout_mode = 1
@@ -168,4 +201,5 @@ text = "返回"
 [connection signal="pressed" from="Background/PauseVBox/SavesButton" to="." method="_on_saves_button_pressed"]
 [connection signal="pressed" from="Background/PauseVBox/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Background/PauseVBox/TextureRect/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="value_changed" from="Background/SettingsVBox/VolumeSlider" to="." method="_on_volume_changed"]
 [connection signal="pressed" from="Background/BackButton" to="." method="_on_back"]
