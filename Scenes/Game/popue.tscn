@@ -121,7 +121,6 @@ layout_mode = 2
 text = "存档"
 
 [node name="PauseVBox" type="VBoxContainer" parent="Background" unique_id=749057719]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -161,6 +160,7 @@ grow_vertical = 2
 text = "退出游戏"
 
 [node name="SettingsVBox" type="VBoxContainer" parent="Background" unique_id=2051085115]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

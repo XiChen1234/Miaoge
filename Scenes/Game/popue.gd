@@ -1,6 +1,8 @@
 extends Control
 class_name Popue
 
+signal closed_signal
+
 # 决定弹窗内容
 enum Mode {
 	SAVES, SETTINGS, PAUSE
@@ -86,7 +88,7 @@ func close() -> void:
 		return
 	
 	is_open = false
-	get_tree().paused = false
+	closed_signal.emit()
 	
 	_close_animate()
 

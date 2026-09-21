@@ -14,7 +14,7 @@ func _on_saves() -> void:
 
 
 func _on_setting() -> void:
-	pass # Replace with function body.
+	popue.open(Popue.Mode.SETTINGS)
 
 
 func _on_exit() -> void:

@@ -21,6 +21,7 @@ func _ready() -> void:
 				current_checkpoint = child
 	
 	exit_area.level_end_signal.connect(_on_level_end)
+	popue.closed_signal.connect(_on_popue_closed)
 	
 	player.death_signal.connect(_on_player_death)
 	player.global_position = current_checkpoint.spawn_point.global_position
@@ -45,6 +46,10 @@ func _on_checkpoint_entered(checkpoint: Checkpoint) -> void:
 
 func _on_level_end() -> void:
 	GameManager.next_level()
+
+
+func _on_popue_closed() -> void:
+	get_tree().paused = false
 
 
 func _on_player_death() -> void:
