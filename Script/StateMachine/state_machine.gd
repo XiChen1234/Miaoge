@@ -9,10 +9,12 @@ var current_state: State
 @export var init_state: State
 
 
-@onready var label: Label = $CanvasLayer/Label
+var _debug_label: Label
 
 
 func _ready() -> void:
+	_debug_label = get_node_or_null("CanvasLayer/Label") as Label
+	
 	for child in get_children():
 		if child is State:
 			states[child.name] = child
@@ -37,7 +39,7 @@ func start() -> void:
 	
 	current_state = init_state
 	current_state.enter()
-	label.text = "当前状态：" + current_state.name
+	_update_debug_label()
 
 
 func change_state(new_state: State, data: Variant = null) -> void:
@@ -48,7 +50,7 @@ func change_state(new_state: State, data: Variant = null) -> void:
 		current_state.exit()
 	
 	current_state = new_state
-	label.text = "当前状态：" + current_state.name
+	_update_debug_label()
 	
 	if new_state != null:
 		new_state.enter(data)
@@ -59,3 +61,9 @@ func handle_event(event: StringName, data: Variant = null) -> void:
 		return
 	
 	current_state.handle_event(event, data)
+
+
+func _update_debug_label() -> void:
+	if _debug_label == null or current_state == null:
+		return
+	_debug_label.text = "当前状态：" + current_state.name
