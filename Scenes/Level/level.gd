@@ -26,6 +26,7 @@ func _ready() -> void:
 	player.global_position = current_checkpoint.spawn_point.global_position
 	
 	player.health_changed.connect(_on_player_health_changed)
+	hud.update_health(player.health)
 
 
 func _unhandled_input(event: InputEvent) -> void:
