@@ -24,8 +24,8 @@ func _on_player_entered(body: Node2D) -> void:
 
 
 func start_disappear() -> void:
-	var safe_timer := get_tree().create_timer(safe_delay)
-	var fade_timer := get_tree().create_timer(fade_delay)
+	var safe_timer := get_tree().create_timer(safe_delay, false)
+	var fade_timer := get_tree().create_timer(fade_delay, false)
 
 	# fade_delay 到：开始淡出
 	await fade_timer.timeout
@@ -40,7 +40,7 @@ func start_disappear() -> void:
 	await fade_out.finished
 
 	# 重生倒计时
-	await get_tree().create_timer(respawn_delay).timeout
+	await get_tree().create_timer(respawn_delay, false).timeout
 	collision_shape_2d.set_deferred("disabled", false)
 	disappear_area.set_deferred("monitoring", true)
 	var fade_in := create_tween()

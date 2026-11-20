@@ -11,6 +11,7 @@ func enter(_data: Variant = null) -> void:
 func physics_update(delta: float) -> void:
 	if player.is_on_floor():
 		state_machine.change_state(land_state)
+		return
 		
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction != 0:
